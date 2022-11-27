@@ -1,5 +1,5 @@
 # OpenGL
-An open-gl wrapping library (LinOpenGL) and different projects linking and using this library.
+An open-gl wrapping library (LiBOpenGL) and different projects (Projects) linking and using this library.
 External dependencies are needed and should be placed in an `externals/` subdirectory:
   - glfw
   - glad
