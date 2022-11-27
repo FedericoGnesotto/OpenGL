@@ -129,7 +129,7 @@ int main()
 
 			glm::mat4 mvpMat = view.projView() * model;
 			shader.setUniformMat4f("u_MVP", mvpMat);
-			renderer.draw(va, shader);
+			renderer.draw(va, shader, (int)vb.vertexCount());
 		}
 
 		glfwSwapBuffers(window);

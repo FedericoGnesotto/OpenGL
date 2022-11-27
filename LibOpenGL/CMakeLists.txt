@@ -10,7 +10,8 @@ add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/externals/glm)
 
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/externals/glad)
 
-set(Resources ${CMAKE_CURRENT_SOURCE_DIR}/res/shaders/Shader.shader)
+set(Resources ${CMAKE_CURRENT_SOURCE_DIR}/res/shaders/Shader.shader
+              ${CMAKE_CURRENT_SOURCE_DIR}/res/shaders/InversionShader.shader)
 
 set(Sources 
 	# ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp 

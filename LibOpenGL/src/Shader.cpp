@@ -23,7 +23,7 @@ namespace libgl
 		glUniform4f(glGetUniformLocation(_shaderProgram, name.c_str()), f1, f2, f3, f4);
 	}
 
-	void Shader::setUniform1i(const std::string& name, int i) { glUniform1i(glGetUniformLocation(_shaderProgram, name.c_str()), i); }
+	void Shader::setUniform1i(const std::string& name, int i) { GlCall(glUniform1i(glGetUniformLocation(_shaderProgram, name.c_str()), i)); }
 
 	void Shader::setUniformMat4f(const std::string& name, const glm::mat4 matrix)
 	{

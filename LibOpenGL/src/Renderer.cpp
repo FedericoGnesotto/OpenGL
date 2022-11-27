@@ -6,7 +6,7 @@
 
 namespace libgl
 {
-	void Renderer::draw(const VertexArray& va, const IndexBuffer& ib, const Shader& sh)
+	void Renderer::draw(const VertexArray& va, const IndexBuffer& ib, const Shader& sh) const
 	{
 		ib.bind();
 		va.bind();
@@ -14,10 +14,10 @@ namespace libgl
 		GlCall(glDrawElements(GL_TRIANGLES, (int)ib.indexCount(), GL_UNSIGNED_INT, 0));
 	}
 
-	void Renderer::draw(const VertexArray& va, const Shader& sh)
+	void Renderer::draw(const VertexArray& va, const Shader& sh, int vertexCount) const
 	{
 		va.bind();
 		sh.use();
-		GlCall(glDrawArrays(GL_TRIANGLES, 0, 36));
+		GlCall(glDrawArrays(GL_TRIANGLES, 0, vertexCount));
 	}
 }

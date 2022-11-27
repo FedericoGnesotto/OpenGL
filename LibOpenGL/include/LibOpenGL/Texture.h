@@ -19,12 +19,13 @@ namespace libgl
 
 		void bind(unsigned int slot = 0) const;
 		void configure(const std::map<GLenum, GLint>& config = DefaultTextureConfig) const;
-		void generate(int width, int height, int channelsCount, void* data, GLenum type = GL_RGB) const;
+		void generate(int width, int height, int channelsCount, void* data, GLenum type = GL_RGB, bool mipmap = true) const;
 
 
 		unsigned id() const { return m_textureId; }
 		int width() const { return m_width; }
 		int height() const { return m_height; }
+		int channels() const { return m_channels; }
 
 		void loadFrom(std::string_view path);
 		void unbind() const;
