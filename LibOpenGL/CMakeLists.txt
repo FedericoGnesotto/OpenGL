@@ -43,6 +43,8 @@ set(Sources
 
     ${CMAKE_CURRENT_SOURCE_DIR}/include/stb/stb_image.h 
     ${CMAKE_CURRENT_SOURCE_DIR}/src/stb/stb_image.cpp 
+    ${CMAKE_CURRENT_SOURCE_DIR}/include/stb/stb_image_write.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/stb/stb_image_write.cpp 
     
     ${Resources})
 

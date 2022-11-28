@@ -18,6 +18,7 @@
 #include <glm/ext/matrix_clip_space.hpp>
 #include <glm/gtx/transform.hpp>
 #include <glm/matrix.hpp>
+#include <stb/stb_image_write.h>
 
 int main()
 {
@@ -76,6 +77,11 @@ int main()
 	glClearColor(1, 1, 1, 0);
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);    // we're not using the stencil buffer now
 	renderer.draw(quadVAO, inversionShader, (int)std::size(quadVertices));
+
+	unsigned char* imageData = (unsigned char*)malloc((int)(width * height * (texIn.channels())));
+	glReadPixels(0, 0, width, height, GL_RGB, GL_UNSIGNED_BYTE, imageData);
+	stbi_write_png("RenderOutput.png", height, width, texIn.channels(), imageData, width * texIn.channels());
+
 	fbo.unbind();
 	texIn.unbind();
 
